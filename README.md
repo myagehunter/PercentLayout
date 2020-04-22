@@ -15,11 +15,11 @@
  *  作用:当我们自定义布局view 时候，给xml里添加属性的作用，达到改变视图 统一这样命名，属性写在attr里
  *
  * 一.自定义控件PercentFrameLayout、PercentLinearLayout、PercentRelativeLayout 三个控件基本一致，系统化布局是通过LayoutInflater来实现
- * 类如在setContentView中常用LayoutParams来让父view 决定如何摆放的位置以及宽高属性，当我们把ClidView写到布局里，而布局的LayoutParams
- * 是有generateDefaultLayoutParams来设置，而自定义PercentRelativeLayout控件就是实现generateLayoutParams这个方法并且返回的继承RelativeLayout.LayoutParams
- * 这样保留控件原有属性， generateLayoutParams的方法参数是AttrbuteSet，里面包含了声明的属性值，最后通过PrecentLayoutHelper对AttributeSet进行解析，
- * 解析结果保存在数据结构PreLayoutInfo 中，最后通过onMeasure-->onLayout-->onDraw,在onMeasure中adjustChildren方法遍历所有子view，通过子view 的
- * PercentLayoutHelper.LayoutParams的宽高百分比换算为实际的占用像素宽高，并保存在对应的子view的LayoutParams里，之后再调用原有的OnMeasure,这样就
+ 类如在setContentView中常用LayoutParams来让父view 决定如何摆放的位置以及宽高属性，当我们把ClidView写到布局里，而布局的LayoutParams
+ 是有generateDefaultLayoutParams来设置，而自定义PercentRelativeLayout控件就是实现generateLayoutParams这个方法并且返回的继承RelativeLayout.LayoutParams
+ 这样保留控件原有属性， generateLayoutParams的方法参数是AttrbuteSet，里面包含了声明的属性值，最后通过PrecentLayoutHelper对AttributeSet进行解析，
+  解析结果保存在数据结构PreLayoutInfo 中，最后通过onMeasure-->onLayout-->onDraw,在onMeasure中adjustChildren方法遍历所有子view，通过子view 的
+  PercentLayoutHelper.LayoutParams的宽高百分比换算为实际的占用像素宽高，并保存在对应的子view的LayoutParams里，之后再调用原有的OnMeasure,这样就
  * 可以实现宽高的百分比转换。
  * 二.ConstraintLayout 适配终结者（基本适配所有机型）主要介绍一下用法
   铺满全屏 
@@ -28,7 +28,7 @@
   app:layout_constraintStart_toStartOf="parent"
   app:layout_constraintTop_toTopOf="parent"
   
-* app:layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.6"  1为100%，这里可填小数。横向0表示，屏幕最左边，1表示最右边，对应了屏幕坐标轴
+ app:layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.6"  1为100%，这里可填小数。横向0表示，屏幕最左边，1表示最右边，对应了屏幕坐标轴
  
 
 
