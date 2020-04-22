@@ -1,6 +1,6 @@
 # PercentFrameLayout
 自定义百分比控件布局及适配终结者，解决安卓适配难题
-/**
+
  * xmlns:android=”http://schemas.android.com/apk/res/android”
  *  xmlns --->xml namespace  声明我们开始定义的命名空间
  *  andorid -->namespace-prefix 它是命名空间名字
@@ -23,4 +23,4 @@
  * 可以实现宽高的百分比转换。
  * ConstraintLayout 适配终结者（基本适配所有机型）
 
- */
+
