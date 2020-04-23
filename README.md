@@ -21,14 +21,15 @@
   解析结果保存在数据结构PreLayoutInfo 中，最后通过onMeasure-->onLayout-->onDraw,在onMeasure中adjustChildren方法遍历所有子view，通过子view 的
   PercentLayoutHelper.LayoutParams的宽高百分比换算为实际的占用像素宽高，并保存在对应的子view的LayoutParams里，之后再调用原有的OnMeasure,这样就
   可以实现宽高的百分比转换。
- * 二.ConstraintLayout 适配终结者（基本适配所有机型）主要介绍一下用法 
- implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+ * 二.ConstraintLayout 适配终结者（基本适配所有机型）
+  它可以在api9以上的安卓系统使用，在Android studio 2.3以后，官方默认的ConstrainLayout，主要解决布局嵌套过多问题，比RelativeLayout更灵活性能更好
   铺满全屏 
   app:layout_constraintBottom_toBottomOf="parent"
   app:layout_constraintEnd_toEndOf="parent"
   app:layout_constraintStart_toStartOf="parent"
   app:layout_constraintTop_toTopOf="parent"
   app:layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.6"  1为100%，这里可填小数。横向0表示，屏幕最左边，1表示     最右边，对应了屏幕坐标轴
+  用法：implementation 'com.android.support.constraint:constraint-layout:1.1.3'
  
 
 
