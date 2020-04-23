@@ -21,7 +21,8 @@
   解析结果保存在数据结构PreLayoutInfo 中，最后通过onMeasure-->onLayout-->onDraw,在onMeasure中adjustChildren方法遍历所有子view，通过子view 的
   PercentLayoutHelper.LayoutParams的宽高百分比换算为实际的占用像素宽高，并保存在对应的子view的LayoutParams里，之后再调用原有的OnMeasure,这样就
   可以实现宽高的百分比转换。
- * 二.ConstraintLayout 适配终结者（基本适配所有机型）主要介绍一下用法
+ * 二.ConstraintLayout 适配终结者（基本适配所有机型）主要介绍一下用法 
+ implementation 'com.android.support.constraint:constraint-layout:1.1.3'
   铺满全屏 
   app:layout_constraintBottom_toBottomOf="parent"
   app:layout_constraintEnd_toEndOf="parent"
