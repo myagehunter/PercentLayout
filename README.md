@@ -31,5 +31,36 @@
   app:layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.6"  1为100%，这里可填小数。横向0表示，屏幕最左边，1表示     最右边，对应了屏幕坐标轴
   用法：implementation 'com.android.support.constraint:constraint-layout:1.1.3'
  
-
+# PercentFrameLayout
+Custom percentage control layout and adaptor terminator, solve the android adaptor problem
+* XMLNS: android = "http://schemas.android.com/apk/res/android"
+* XMLNS - & gt;The XML namespace declares the namespace we started defining
+* android - & gt;Namespace-prefix is the namespace name
+* function: equivalent to the program in the URI fixed, give us the development of the syntax file prompt input
+*
+* XMLNS: tools = "http://schemas.android.com/tools"
+* tools: a tool that belongs to the development phase, which is understood as a property written in the development phase. When the property is installed on the phone, the property disappears, such as adding a Chinese name to fill the view when testing
+* you can see the MainActivity theme in the view if you add tools:context= "package name.MainActivity.
+* the tools: layout = @ layout/yourfragmentlayoutname during the testing phase is displayed on the layout preview window to load a fragment on the Activity
+*
+* the custom namespace XMLNS: app = "http://schemas.android.com/apk/res-auto"
+Effect: when we customize the layout view, we add the effect of the attribute to the XML to change the view so that it is uniformly named, and the attribute is written in attr
+ 
+* 1. The custom controls PercentFrameLayout, PercentLinearLayout and PercentRelativeLayout are basically the same, and the systematic layout is realized by LayoutInflater
+For example, in setContentView, we often use LayoutParams to let the parent view decide where to put it and the width and height properties, when we write ClidView to the layout, and the LayoutParams of the layout
+Is generateDefaultLayoutParams to set up, and the custom PercentRelativeLayout control is implemented generateLayoutParams this method and returns the inheritance RelativeLayout. LayoutParams
+The method parameter of generateLayoutParams is AttrbuteSet, which contains the declared attribute value. Finally, AttributeSet is parsed by PrecentLayoutHelper.
+The analysis results are saved in the data structure PreLayoutInfo, and finally through onMeasure--&gt;OnLayout - & gt;OnDraw, in onMeasure the adjustChildren method traverses all the sub-views through the sub-view
+PercentLayoutHelper. LayoutParams wide high percent conversion as the actual occupy high pixel wide, and stored in the corresponding sub in the LayoutParams of the view, and then call the original OnMeasure, thus
+The percentage conversion of width and height can be achieved.
+* 2. Adaptor for ConstraintLayout (basic adaptor for all models)
+It can be used on Android systems with api9 or above. After Android studio 2.3, the official default ConstrainLayout is used to solve the problem of too many nested layouts, which is more flexible and better than a RelativeLayout
+Covered with full screen
+App: layout_constraintBottom_toBottomOf = "parent"
+App: layout_constraintEnd_toEndOf = "parent"
+App: layout_constraintStart_toStartOf = "parent"
+App: layout_constraintTop_toTopOf = "parent"
+App :layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.6"Horizontal 0 represents the left side of the screen, and 1 represents the right side, which corresponds to the axis of the screen
+Usage: implementation 'com. Android. Support. The constraint, the constraint - layout: 1.1.3'
+ 
 
