@@ -31,7 +31,7 @@
   app:layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.6"  1为100%，这里可填小数。横向0表示，屏幕最左边，1表示     最右边，对应了屏幕坐标轴
   用法：implementation 'com.android.support.constraint:constraint-layout:1.1.3'
  
-# PercentFrameLayout
+
 Custom percentage control layout and adaptor terminator, solve the android adaptor problem
 * XMLNS: android = "http://schemas.android.com/apk/res/android"
 * XMLNS - & gt;The XML namespace declares the namespace we started defining
